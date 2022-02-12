@@ -7,12 +7,17 @@
 
 
     @foreach ($posts as $post)
-        <article>
+        <article class="mb-5 border bottom pb-3">
             <h2>
-                <a href="/posts/{{ $post->slug }}">{{ $post->title }}</a>
+                <a href="/posts/{{ $post->slug }}" class="text-decoration-none">{{ $post->title }}</a>
             </h2>
+
+            <p>By. Sella Putri Sari in <a href="/categories/{{ $post->category->slug }}" class="text-decoration-none">{{ $post->category->name }}</a></p>
+
             {{-- <h5>By: {{ $post["author"] }}</h5> --}}
             <p>{{ $post->excerpt }}</p>
+
+            <a href="/posts/{{ $post->slug }}" class="text-decoration-none">Read more..</a>
         </article>
     @endforeach
 
